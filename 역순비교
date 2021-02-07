@@ -1,0 +1,17 @@
+# 입력된 숫자를 역순으로 바꾸고, 크기를 비교
+def wrong_answer(n1, n2) :
+   n_reverse1 = 0
+   n_reverse2 = 0
+   
+   n_reverse1 += n1 // 100 +( n1 // 10 % 10 )* 10 + ( n1 % 10 )* 100 
+   n_reverse2 += n2 // 100 +( n2 // 10 % 10 )* 10 + ( n2 % 10 )* 100    
+   
+   if n_reverse1 > n_reverse2 :
+       print(n_reverse1)
+   else : 
+       print(n_reverse2)
+   
+n1, n2 = input().split()
+n1 = int(n1)
+n2 = int(n2)
+wrong_answer(n1,n2)
