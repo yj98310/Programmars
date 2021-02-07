@@ -1,0 +1,20 @@
+# 알파벳을 입력하면, 그에 맞는 숫자를 누를 때 걸리는 시간을 구하라
+# 1을 누르는데 2초가 걸리고, 숫자가 1씩 증가할 때마다 시간도 1초씩 증가한다.
+def dial(number) :
+    phone_dial = { 2 : ['A','B','C'], 3 : ['D','E','F'],
+                  4 : ['G','H','I'], 5 : ['J','K','L'],
+                  6 : ['M','N','O'],  7 : ['P','Q','R','S'],
+                  8 : ['T','U','V'], 9 : ['W','X','Y','Z'],
+                }
+    num = list(number)
+    trans_number = []
+    for i in num :
+        for key,val in phone_dial.items() :
+            if i in val :
+                trans_number.append(key)
+    total_time = sum(trans_number) + len(trans_number)
+            
+    print(total_time)
+    
+number = input()
+dial(number)
