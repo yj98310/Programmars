@@ -1,0 +1,19 @@
+# 제일 빈도수가 높은 단어 찾기
+def find_alphabet(word) :
+    word_list = list(i.upper() for i in word)
+    word_dict = {}
+   
+    for word in word_list :
+       try : word_dict[word] += 1
+       except : word_dict[word] = 1
+    
+    max_alpha = max(word_dict, key = word_dict.get)
+    max_number = word_dict[max_alpha]
+    duple = 0
+    for number in word_dict.values() :
+        if number == max_number :
+            duple += 1
+    if duple >= 2 :
+        return "?"
+    else :
+        return max_alpha
